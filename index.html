@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SWC Headline Rater</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Score and compare marketing headlines with a neon interactive UI." />
+</head>
+
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header class="header">
+      <h1>SWC Headline Rater</h1>
+      <p class="tag">Write two headline ideas, see the score live, compare, then copy the winner.</p>
+    </header>
+
+    <section class="scoreboard">
+      <div class="gauge" id="gaugeA" aria-label="Score for Headline A" role="img">
+        <div class="gauge-inner">
+          <div class="gauge-value" id="scoreA">0</div>
+          <div class="gauge-label">Score A</div>
+        </div>
+      </div>
+      <div class="gauge" id="gaugeB" aria-label="Score for Headline B" role="img">
+        <div class="gauge-inner">
+          <div class="gauge-value" id="scoreB">0</div>
+          <div class="gauge-label">Score B</div>
+        </div>
+      </div>
+    </section>
+
+    <main class="panes">
+      <article class="pane">
+        <div class="pane-head">
+          <h2>Headline A</h2>
+          <span class="meta" id="metaA">0 words, 0 chars</span>
+        </div>
+        <textarea id="inputA" placeholder="Example: 10 quick ways to boost click through today"></textarea>
+        <ul class="tips" id="tipsA"></ul>
+      </article>
+
+      <article class="pane">
+        <div class="pane-head">
+          <h2>Headline B</h2>
+          <span class="meta" id="metaB">0 words, 0 chars</span>
+        </div>
+        <textarea id="inputB" placeholder="Example: Unlock growth with 3 proven email subject lines"></textarea>
+        <ul class="tips" id="tipsB"></ul>
+      </article>
+    </main>
+
+    <div class="actions">
+      <button id="compare" class="btn primary">Compare</button>
+      <button id="swap" class="btn">Swap</button>
+      <button id="copyBest" class="btn">Copy winner</button>
+      <button id="share" class="btn">Share link</button>
+      <button id="clear" class="btn danger">Clear</button>
+    </div>
+
+    <footer class="footer">
+      <div>Shortcuts: Cmd or Ctrl Enter compare, Cmd or Ctrl 1 focus A, Cmd or Ctrl 2 focus B, Esc clear</div>
+      <div class="credit">Local only, nothing uploaded. Saving to your browser storage.</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
